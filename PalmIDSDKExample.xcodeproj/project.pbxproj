@@ -1,0 +1,733 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17DB3C3F0BE754D0501A1DED /* Pods_PalmIDSDKExample_PalmIDSDKExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7F7DACA374F24313E8DE4D /* Pods_PalmIDSDKExample_PalmIDSDKExampleUITests.framework */; };
+		39709C8C97528B9938149642 /* Pods_PalmIDSDKExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C519841BE8B89DD39624E96D /* Pods_PalmIDSDKExampleTests.framework */; };
+		AA9FAF43465698052C11D8D6 /* Pods_PalmIDSDKExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1C4CDBAC9F0C71ECE34AB7 /* Pods_PalmIDSDKExample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F73A0432DDC59FE001B33B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F73A0242DDC59FB001B33B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F73A02B2DDC59FB001B33B9;
+			remoteInfo = PalmIDSDKExample;
+		};
+		3F73A04D2DDC59FE001B33B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F73A0242DDC59FB001B33B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F73A02B2DDC59FB001B33B9;
+			remoteInfo = PalmIDSDKExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F1C4CDBAC9F0C71ECE34AB7 /* Pods_PalmIDSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PalmIDSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39AAB7B4DC554F3044794AFE /* Pods-PalmIDSDKExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PalmIDSDKExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-PalmIDSDKExampleTests/Pods-PalmIDSDKExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C7F7DACA374F24313E8DE4D /* Pods_PalmIDSDKExample_PalmIDSDKExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PalmIDSDKExample_PalmIDSDKExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F73A02C2DDC59FB001B33B9 /* PalmIDSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PalmIDSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F73A0422DDC59FE001B33B9 /* PalmIDSDKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PalmIDSDKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F73A04C2DDC59FE001B33B9 /* PalmIDSDKExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PalmIDSDKExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C8A08B2E57BB2458802B15B /* Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7675C762F2C20D9EBD94657B /* Pods-PalmIDSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PalmIDSDKExample.debug.xcconfig"; path = "Target Support Files/Pods-PalmIDSDKExample/Pods-PalmIDSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
+		770E8FF0451A3C510CAB1393 /* Pods-PalmIDSDKExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PalmIDSDKExampleTests.release.xcconfig"; path = "Target Support Files/Pods-PalmIDSDKExampleTests/Pods-PalmIDSDKExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		88BC72DB2D5F99CB2A708EF4 /* Pods-PalmIDSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PalmIDSDKExample.release.xcconfig"; path = "Target Support Files/Pods-PalmIDSDKExample/Pods-PalmIDSDKExample.release.xcconfig"; sourceTree = "<group>"; };
+		A1AD4D754F75DA5290CFC78C /* Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C519841BE8B89DD39624E96D /* Pods_PalmIDSDKExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PalmIDSDKExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3F73A0542DDC59FE001B33B9 /* Exceptions for "PalmIDSDKExample" folder in "PalmIDSDKExample" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3F73A02B2DDC59FB001B33B9 /* PalmIDSDKExample */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3F73A02E2DDC59FC001B33B9 /* PalmIDSDKExample */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3F73A0542DDC59FE001B33B9 /* Exceptions for "PalmIDSDKExample" folder in "PalmIDSDKExample" target */,
+			);
+			path = PalmIDSDKExample;
+			sourceTree = "<group>";
+		};
+		3F73A0452DDC59FE001B33B9 /* PalmIDSDKExampleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PalmIDSDKExampleTests;
+			sourceTree = "<group>";
+		};
+		3F73A04F2DDC59FE001B33B9 /* PalmIDSDKExampleUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PalmIDSDKExampleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F73A0292DDC59FB001B33B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA9FAF43465698052C11D8D6 /* Pods_PalmIDSDKExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F73A03F2DDC59FE001B33B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39709C8C97528B9938149642 /* Pods_PalmIDSDKExampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F73A0492DDC59FE001B33B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17DB3C3F0BE754D0501A1DED /* Pods_PalmIDSDKExample_PalmIDSDKExampleUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A10E8B45102982C4E37CEA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7675C762F2C20D9EBD94657B /* Pods-PalmIDSDKExample.debug.xcconfig */,
+				88BC72DB2D5F99CB2A708EF4 /* Pods-PalmIDSDKExample.release.xcconfig */,
+				A1AD4D754F75DA5290CFC78C /* Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.debug.xcconfig */,
+				5C8A08B2E57BB2458802B15B /* Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.release.xcconfig */,
+				39AAB7B4DC554F3044794AFE /* Pods-PalmIDSDKExampleTests.debug.xcconfig */,
+				770E8FF0451A3C510CAB1393 /* Pods-PalmIDSDKExampleTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3F73A0232DDC59FB001B33B9 = {
+			isa = PBXGroup;
+			children = (
+				3F73A02E2DDC59FC001B33B9 /* PalmIDSDKExample */,
+				3F73A0452DDC59FE001B33B9 /* PalmIDSDKExampleTests */,
+				3F73A04F2DDC59FE001B33B9 /* PalmIDSDKExampleUITests */,
+				3F73A02D2DDC59FB001B33B9 /* Products */,
+				1A10E8B45102982C4E37CEA3 /* Pods */,
+				9BC5546515BB71A0651736EE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F73A02D2DDC59FB001B33B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F73A02C2DDC59FB001B33B9 /* PalmIDSDKExample.app */,
+				3F73A0422DDC59FE001B33B9 /* PalmIDSDKExampleTests.xctest */,
+				3F73A04C2DDC59FE001B33B9 /* PalmIDSDKExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BC5546515BB71A0651736EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F1C4CDBAC9F0C71ECE34AB7 /* Pods_PalmIDSDKExample.framework */,
+				3C7F7DACA374F24313E8DE4D /* Pods_PalmIDSDKExample_PalmIDSDKExampleUITests.framework */,
+				C519841BE8B89DD39624E96D /* Pods_PalmIDSDKExampleTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F73A02B2DDC59FB001B33B9 /* PalmIDSDKExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F73A0552DDC59FE001B33B9 /* Build configuration list for PBXNativeTarget "PalmIDSDKExample" */;
+			buildPhases = (
+				FADCE274A213D0008B173AC0 /* [CP] Check Pods Manifest.lock */,
+				3F73A0282DDC59FB001B33B9 /* Sources */,
+				3F73A0292DDC59FB001B33B9 /* Frameworks */,
+				3F73A02A2DDC59FB001B33B9 /* Resources */,
+				8012256E57F96FAEE90AA53A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3F73A02E2DDC59FC001B33B9 /* PalmIDSDKExample */,
+			);
+			name = PalmIDSDKExample;
+			productName = PalmIDSDKExample;
+			productReference = 3F73A02C2DDC59FB001B33B9 /* PalmIDSDKExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F73A0412DDC59FE001B33B9 /* PalmIDSDKExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F73A05A2DDC59FE001B33B9 /* Build configuration list for PBXNativeTarget "PalmIDSDKExampleTests" */;
+			buildPhases = (
+				7F1A9C67F6585F875887AF01 /* [CP] Check Pods Manifest.lock */,
+				3F73A03E2DDC59FE001B33B9 /* Sources */,
+				3F73A03F2DDC59FE001B33B9 /* Frameworks */,
+				3F73A0402DDC59FE001B33B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F73A0442DDC59FE001B33B9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3F73A0452DDC59FE001B33B9 /* PalmIDSDKExampleTests */,
+			);
+			name = PalmIDSDKExampleTests;
+			productName = PalmIDSDKExampleTests;
+			productReference = 3F73A0422DDC59FE001B33B9 /* PalmIDSDKExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F73A04B2DDC59FE001B33B9 /* PalmIDSDKExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F73A05D2DDC59FE001B33B9 /* Build configuration list for PBXNativeTarget "PalmIDSDKExampleUITests" */;
+			buildPhases = (
+				6681F8FD2CCA2BB9FEE4800B /* [CP] Check Pods Manifest.lock */,
+				3F73A0482DDC59FE001B33B9 /* Sources */,
+				3F73A0492DDC59FE001B33B9 /* Frameworks */,
+				3F73A04A2DDC59FE001B33B9 /* Resources */,
+				BC0CA209E2FA131F09626F37 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F73A04E2DDC59FE001B33B9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3F73A04F2DDC59FE001B33B9 /* PalmIDSDKExampleUITests */,
+			);
+			name = PalmIDSDKExampleUITests;
+			productName = PalmIDSDKExampleUITests;
+			productReference = 3F73A04C2DDC59FE001B33B9 /* PalmIDSDKExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F73A0242DDC59FB001B33B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					3F73A02B2DDC59FB001B33B9 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					3F73A0412DDC59FE001B33B9 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 3F73A02B2DDC59FB001B33B9;
+					};
+					3F73A04B2DDC59FE001B33B9 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 3F73A02B2DDC59FB001B33B9;
+					};
+				};
+			};
+			buildConfigurationList = 3F73A0272DDC59FB001B33B9 /* Build configuration list for PBXProject "PalmIDSDKExample" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F73A0232DDC59FB001B33B9;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3F73A02D2DDC59FB001B33B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F73A02B2DDC59FB001B33B9 /* PalmIDSDKExample */,
+				3F73A0412DDC59FE001B33B9 /* PalmIDSDKExampleTests */,
+				3F73A04B2DDC59FE001B33B9 /* PalmIDSDKExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F73A02A2DDC59FB001B33B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F73A0402DDC59FE001B33B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F73A04A2DDC59FE001B33B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6681F8FD2CCA2BB9FEE4800B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F1A9C67F6585F875887AF01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PalmIDSDKExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8012256E57F96FAEE90AA53A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PalmIDSDKExample/Pods-PalmIDSDKExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PalmIDSDKExample/Pods-PalmIDSDKExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PalmIDSDKExample/Pods-PalmIDSDKExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC0CA209E2FA131F09626F37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests/Pods-PalmIDSDKExample-PalmIDSDKExampleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FADCE274A213D0008B173AC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PalmIDSDKExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F73A0282DDC59FB001B33B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F73A03E2DDC59FE001B33B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F73A0482DDC59FE001B33B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F73A0442DDC59FE001B33B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F73A02B2DDC59FB001B33B9 /* PalmIDSDKExample */;
+			targetProxy = 3F73A0432DDC59FE001B33B9 /* PBXContainerItemProxy */;
+		};
+		3F73A04E2DDC59FE001B33B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F73A02B2DDC59FB001B33B9 /* PalmIDSDKExample */;
+			targetProxy = 3F73A04D2DDC59FE001B33B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3F73A0562DDC59FE001B33B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7675C762F2C20D9EBD94657B /* Pods-PalmIDSDKExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = None;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PalmIDSDKExample/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan your palm";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palmid.sdk.example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F73A0572DDC59FE001B33B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88BC72DB2D5F99CB2A708EF4 /* Pods-PalmIDSDKExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = None;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PalmIDSDKExample/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan your palm";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palmid.sdk.example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3F73A0582DDC59FE001B33B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F73A0592DDC59FE001B33B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F73A05B2DDC59FE001B33B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39AAB7B4DC554F3044794AFE /* Pods-PalmIDSDKExampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palmid.sdk.example.PalmIDSDKExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PalmIDSDKExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PalmIDSDKExample";
+			};
+			name = Debug;
+		};
+		3F73A05C2DDC59FE001B33B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 770E8FF0451A3C510CAB1393 /* Pods-PalmIDSDKExampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palmid.sdk.example.PalmIDSDKExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PalmIDSDKExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PalmIDSDKExample";
+			};
+			name = Release;
+		};
+		3F73A05E2DDC59FE001B33B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1AD4D754F75DA5290CFC78C /* Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palmid.sdk.example.PalmIDSDKExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PalmIDSDKExample;
+			};
+			name = Debug;
+		};
+		3F73A05F2DDC59FE001B33B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C8A08B2E57BB2458802B15B /* Pods-PalmIDSDKExample-PalmIDSDKExampleUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.palmid.sdk.example.PalmIDSDKExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PalmIDSDKExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F73A0272DDC59FB001B33B9 /* Build configuration list for PBXProject "PalmIDSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F73A0582DDC59FE001B33B9 /* Debug */,
+				3F73A0592DDC59FE001B33B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F73A0552DDC59FE001B33B9 /* Build configuration list for PBXNativeTarget "PalmIDSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F73A0562DDC59FE001B33B9 /* Debug */,
+				3F73A0572DDC59FE001B33B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F73A05A2DDC59FE001B33B9 /* Build configuration list for PBXNativeTarget "PalmIDSDKExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F73A05B2DDC59FE001B33B9 /* Debug */,
+				3F73A05C2DDC59FE001B33B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F73A05D2DDC59FE001B33B9 /* Build configuration list for PBXNativeTarget "PalmIDSDKExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F73A05E2DDC59FE001B33B9 /* Debug */,
+				3F73A05F2DDC59FE001B33B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F73A0242DDC59FB001B33B9 /* Project object */;
+}

@@ -1,0 +1,23 @@
+PODS:
+  - PalmIDNativeSDK (0.0.14.1.0.19-46):
+    - SVProgressHUD (~> 2.3.1)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
+
+DEPENDENCIES:
+  - PalmIDNativeSDK (>= 0.0.14.1.0.19-46)
+
+SPEC REPOS:
+  "git@github.com:rrbpalm/palmid-sdk-cocopods.git":
+    - PalmIDNativeSDK
+  https://github.com/CocoaPods/Specs.git:
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  PalmIDNativeSDK: bc5e419aab1bf318d4ef0f1ee0eb7ce4b30d3896
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+
+PODFILE CHECKSUM: f6538208cc347f7643e5928fc6f0a17dc8f0853d
+
+COCOAPODS: 1.16.2

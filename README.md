@@ -1,0 +1,30 @@
+# PalmID SDK iOS Example
+
+This is a simple example of how to use the PalmID SDK.
+
+## Configuration
+
+1. add the following permissions to your `Info.plist` file:
+
+```xml
+<key>NSCameraUsageDescription</key>
+<string>Camera permission is required for PalmID SDK</string>
+```
+
+2. add the following to your `Podfile` file:
+
+```ruby
+# You must include the palm native podspec source below.
+source 'https://github.com/CocoaPods/Specs.git'
+source 'git@github.com:rrbpalm/palmid-sdk-cocopods.git'
+
+pod 'PalmIDNativeSDK', 'latest.version'
+```
+
+3. add the following to your `AppDelegate` file:
+
+```swift
+PalmIDNativeSDK.sharedInstance().initialize(withEntrypoint: entrypoint, partnerId: partnerId, projectId: projectId) { success in
+            print("init sdk result: \(success)")
+}
+```
