@@ -16,7 +16,7 @@ This is a simple example of how to use the PalmID SDK.
 ```ruby
 # You must include the palm native podspec source below.
 source 'https://github.com/CocoaPods/Specs.git'
-source 'git@github.com:rrbpalm/palmid-sdk-cocopods.git'
+source 'git@github.com:redrockbiometrics/palmid-sdk-cocopods.git'
 
 pod 'PalmIDNativeSDK', 'latest.version'
 ```
@@ -28,3 +28,20 @@ PalmIDNativeSDK.sharedInstance().initialize(withEntrypoint: entrypoint, partnerI
             print("init sdk result: \(success)")
 }
 ```
+
+
+## Result Error Codes
+
+| Description | Error Code |
+|------------|-------------|
+| SuccessException          | 100000  |
+| UserCancelledException    | -1      |
+| AuthenticationException   | 100001  |
+| UserNotFoundException     | 100002  |
+| NoMatchUserException      | 100003  |
+| UserAlreadyExistsException| 100004  |
+| EnrollException           | 100005  |
+| IdentifyException         | 100006  |
+| VerifyException           | 100007  |
+| DeleteUserException       | 100008  |
+| OtherException            | 999999  |

@@ -3,7 +3,7 @@
 
 # You must include the palm native podspec source below.
 source 'https://github.com/CocoaPods/Specs.git'
-source 'git@github.com:rrbpalm/palmid-sdk-cocopods.git'
+source 'git@github.com:redrockbiometrics/palmid-sdk-cocopods.git'
 
 target 'PalmIDSDKExample' do
   # Comment the next line if you don't want to use dynamic frameworks
