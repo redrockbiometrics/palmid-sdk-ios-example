@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     private var entrypoint: String = "https://api-us-west.redrockbiometrics.com/saas/api/"
     private var partnerId: String = ""  // Replace with your partnerId
     private var projectId: String = ""  // Replace with your projectId
+    private var accessToken: String = ""  // Optional. If not provided, it will be automatically generated using partnerId and projectId.
 
     var palmId: String = ""
 

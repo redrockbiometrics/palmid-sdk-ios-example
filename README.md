@@ -24,11 +24,19 @@ pod 'PalmIDNativeSDK', 'latest.version'
 3. add the following to your `AppDelegate` file:
 
 ```swift
-PalmIDNativeSDK.sharedInstance().initialize(withEntrypoint: entrypoint, partnerId: partnerId, projectId: projectId) { success in
+PalmIDNativeSDK.sharedInstance().initialize(withEntrypoint: entrypoint, partnerId: partnerId, projectId: projectId, accessToken: accessToken) { success in
             print("init sdk result: \(success)")
 }
 ```
 
+3.1 Parameters
+
+| Parameter | Required | Description |
+|------------|-------------|-------------|
+| entrypoint | Yes | The entrypoint of the PalmID SDK. |
+| partnerId | Yes | The partnerId of the PalmID SDK. |
+| projectId | Yes | The projectId of the PalmID SDK. |
+| accessToken | No | The accessToken of the PalmID SDK. If not provided, it will be automatically generated using partnerId and projectId. |
 
 ## Result Error Codes
 
