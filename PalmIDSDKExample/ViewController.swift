@@ -13,12 +13,13 @@ class ViewController: UIViewController {
     private var partnerId: String = ""  // Replace with your partnerId
     private var projectId: String = ""  // Replace with your projectId
     private var accessToken: String = ""  // Optional. If not provided, it will be automatically generated using partnerId and projectId.
+    private var requiredEnrollmentScans: Int = 1  // Optional. Required number of scans for enrollment
 
     var palmId: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        PalmIDNativeSDK.sharedInstance().initialize(withEntrypoint: entrypoint, partnerId: partnerId, projectId: projectId, accessToken: nil) { success in
+        PalmIDNativeSDK.sharedInstance().initialize(withEntrypoint: entrypoint, partnerId: partnerId, projectId: projectId, accessToken: nil, requiredEnrollmentScans: requiredEnrollmentScans) { success in
             print("init sdk result: \(success)")
         }
     }
