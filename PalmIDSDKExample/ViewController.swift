@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        PalmIDNativeSDK.sharedInstance().initialize(withEntrypoint: entrypoint, partnerId: partnerId, projectId: projectId) { success in
+        PalmIDNativeSDK.sharedInstance().initialize(withEntrypoint: entrypoint, partnerId: partnerId, projectId: projectId, accessToken: nil) { success in
             print("init sdk result: \(success)")
         }
     }
