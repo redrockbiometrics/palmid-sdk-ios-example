@@ -28,16 +28,12 @@ pod 'PalmIDNativeSDK', 'latest.version'
  * Initializes the PalmID SDK engine with required credentials and configuration.
  *
  * @param entrypoint       (Optional) Custom backend API endpoint URL. Pass `nil` to use the default endpoint.
- * @param partnerId        (Required) Partner identifier for authentication. Must not be `nil`.
  * @param projectId        (Required) Project identifier for service segregation. Must not be `nil`.
- * @param accessToken      (Optional) Access token for authentication. Pass `nil` to use the default token.
  * @param requiredEnrollmentScans (Optional) Required number of scans for enrollment. Pass `nil` if not required.
  * @param completion       Callback block with initialization result (success/failure).
  */
 - (void)initializeWithEntrypoint:(NSString * _Nullable)entrypoint
-                       partnerId:(NSString * _Nonnull)partnerId
                        projectId:(NSString * _Nonnull)projectId
-                       accessToken:(NSString * _Nullable)accessToken
                        requiredEnrollmentScans:(NSNumber * _Nullable)requiredEnrollmentScans
                       completion:(PalmIDNativeSDKCompletion)completion;
 
