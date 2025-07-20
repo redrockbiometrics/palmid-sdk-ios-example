@@ -27,12 +27,14 @@ pod 'PalmIDNativeSDK', 'latest.version'
 /**
  * Initializes the PalmID SDK engine with required credentials and configuration.
  *
- * @param entrypoint       (Optional) Custom backend API endpoint URL. Pass `nil` to use the default endpoint.
+ * @param palmServerEntrypoint       (Optional) Custom backend API endpoint URL. Pass `nil` to use the default endpoint.
+ * @param appServerEntrypoint       (Optional) Custom backend API endpoint URL. Pass `nil` to use the default endpoint.
  * @param projectId        (Required) Project identifier for service segregation. Must not be `nil`.
  * @param requiredEnrollmentScans (Optional) Required number of scans for enrollment. Pass `nil` if not required.
  * @param completion       Callback block with initialization result (success/failure).
  */
-- (void)initializeWithEntrypoint:(NSString * _Nullable)entrypoint
+- (void)initializeWithPalmServerEntrypoint:(NSString * _Nullable)palmServerEntrypoint
+                       appServerEntrypoint:(NSString * _Nullable)appServerEntrypoint
                        projectId:(NSString * _Nonnull)projectId
                        requiredEnrollmentScans:(NSNumber * _Nullable)requiredEnrollmentScans
                       completion:(PalmIDNativeSDKCompletion)completion;
@@ -95,6 +97,7 @@ pod 'PalmIDNativeSDK', 'latest.version'
 @interface PalmIDNativeResultData : NSObject
 @property (nonatomic, copy) NSString *palmId;
 @property (nonatomic, assign) double score;
+@property (nonatomic, copy) NSString *sessionId; // Only has value when appServerEntrypoint is specified during initialization
 @end
 
 @interface PalmIDNativeResult : NSObject

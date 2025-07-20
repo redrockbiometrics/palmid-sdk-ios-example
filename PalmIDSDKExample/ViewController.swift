@@ -9,7 +9,8 @@ import UIKit
 import PalmIDNativeSDK
 
 class ViewController: UIViewController {
-    private var entrypoint: String = "https://api2.palmid.com/saas"
+    private var palmServerEntrypoint: String = "https://api2.palmid.com/saas"
+    private var appServerEntrypoint: String = "https://api2.palmid.com/saas"
     private var projectId: String = "" // Replace with your projectId
     private var requiredEnrollmentScans: Int = 1  // Optional. Required number of scans for enrollment
 
@@ -17,7 +18,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        PalmIDNativeSDK.sharedInstance().initialize(withEntrypoint: entrypoint, projectId: projectId, requiredEnrollmentScans: NSNumber(value: requiredEnrollmentScans)) { success in
+        PalmIDNativeSDK.sharedInstance().initialize(withPalmServerEntrypoint: palmServerEntrypoint, appServerEntrypoint: appServerEntrypoint, projectId: projectId, requiredEnrollmentScans: NSNumber(value: requiredEnrollmentScans)) { success in
             print("init sdk result: \(success)")
         }
     }
