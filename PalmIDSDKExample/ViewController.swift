@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         PalmIDNativeSDK.sharedInstance().initialize(withPalmServerEntrypoint: palmServerEntrypoint, appServerEntrypoint: appServerEntrypoint, projectId: projectId, requiredEnrollmentScans: NSNumber(value: requiredEnrollmentScans)) { success in
             print("init sdk result: \(success)")
+            self.showToast(message: "Initialize result: \(success)")
         }
     }
     
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
         PalmIDNativeSDK.sharedInstance().enroll(with: self.navigationController!, loadController: load) { result in
             self.palmId = result.data.palmId
             print("sdk result: \(result)")
+            self.showDialog(title: "Result", message: "\(result)")
         }
     }
     
@@ -36,6 +38,7 @@ class ViewController: UIViewController {
         PalmIDNativeSDK.sharedInstance().identify(with: self.navigationController!, loadController: load) { result in
             self.palmId = result.data.palmId
             print("sdk result: \(result)")
+            self.showDialog(title: "Result", message: "\(result)")
         }
     }
     
@@ -44,12 +47,14 @@ class ViewController: UIViewController {
         var load = PalmIDNativeSDKLoadController()
         PalmIDNativeSDK.sharedInstance().verify(withPalmId: self.palmId, navigationController: self.navigationController!, loadController: load) { result in
             print("sdk result: \(result)")
+            self.showDialog(title: "Result", message: "\(result)")
         }
     }
     
     @IBAction func onDelete(_ sender: Any) {
         PalmIDNativeSDK.sharedInstance().deleteUser(self.palmId) { result in
             print("sdk result: \(result)")
+            self.showDialog(title: "Result", message: "\(result)")
             self.palmId = ""
         }
     }
@@ -57,6 +62,44 @@ class ViewController: UIViewController {
     
     @IBAction func onDestory(_ sender: Any) {
         PalmIDNativeSDK.sharedInstance().releaseEngine()
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func showToast(message: String) {
+        DispatchQueue.main.async {
+            let toastLabel = UILabel()
+            toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            toastLabel.textColor = UIColor.white
+            toastLabel.textAlignment = .center
+            toastLabel.font = UIFont.systemFont(ofSize: 16.0)
+            toastLabel.text = message
+            toastLabel.alpha = 1.0
+            toastLabel.layer.cornerRadius = 10
+            toastLabel.clipsToBounds = true
+            
+            let toastContainer = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 110))
+            toastContainer.backgroundColor = UIColor.clear
+            toastContainer.addSubview(toastLabel)
+            self.view.addSubview(toastContainer)
+            
+            toastLabel.frame = CGRect(x: 20, y: toastContainer.frame.size.height - 100, width: toastContainer.frame.size.width - 40, height: 35)
+            
+            UIView.animate(withDuration: 2.0, delay: 0.1, options: .curveEaseOut, animations: {
+                toastLabel.alpha = 0.0
+            }, completion: { _ in
+                toastContainer.removeFromSuperview()
+            })
+        }
+    }
+    
+    private func showDialog(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 
