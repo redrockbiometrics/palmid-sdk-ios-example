@@ -27,41 +27,55 @@ class ViewController: UIViewController {
     @IBAction func onEnroll(_ sender: Any) {
         var load = PalmIDNativeSDKLoadController()
         PalmIDNativeSDK.sharedInstance().enroll(with: self.navigationController!, loadController: load) { result in
-            self.palmId = result.data.palmId
-            print("sdk result: \(result)")
-            self.showDialog(title: "Result", message: "\(result)")
+            if result.errorCode == 100004 {
+                self.showDialog(title: "Error", message: "Duplicate enrollment, palms are already registered")
+            } else {
+                print("enroll result: \(result)")
+                self.showDialog(title: "Result", message: "enroll result: \(result)")
+                self.palmId = result.data.palmId
+            }
         }
     }
     
     @IBAction func onIdentify(_ sender: Any) {
         var load = PalmIDNativeSDKLoadController()
         PalmIDNativeSDK.sharedInstance().identify(with: self.navigationController!, loadController: load) { result in
+            print("identify result: \(result)")
+            self.showDialog(title: "Result", message: "identify result: \(result)")
             self.palmId = result.data.palmId
-            print("sdk result: \(result)")
-            self.showDialog(title: "Result", message: "\(result)")
         }
     }
     
     
     @IBAction func onVerify(_ sender: Any) {
-        var load = PalmIDNativeSDKLoadController()
-        PalmIDNativeSDK.sharedInstance().verify(withPalmId: self.palmId, navigationController: self.navigationController!, loadController: load) { result in
-            print("sdk result: \(result)")
-            self.showDialog(title: "Result", message: "\(result)")
+        if palmId.isEmpty {
+            self.showDialog(title: "Error", message: "Verification requires an input palmId")
+        } else {
+            var load = PalmIDNativeSDKLoadController()
+            PalmIDNativeSDK.sharedInstance().verify(withPalmId: self.palmId, navigationController: self.navigationController!, loadController: load) { result in
+                print("verify result: \(result)")
+                self.showDialog(title: "Result", message: "verify result: \(result)")
+            }
         }
     }
     
     @IBAction func onDelete(_ sender: Any) {
-        PalmIDNativeSDK.sharedInstance().deleteUser(self.palmId) { result in
-            print("sdk result: \(result)")
-            self.showDialog(title: "Result", message: "\(result)")
-            self.palmId = ""
+        if palmId.isEmpty {
+            self.showDialog(title: "Error", message: "DeleteUser requires an input palmId")
+        } else {
+            PalmIDNativeSDK.sharedInstance().deleteUser(self.palmId) { result in
+                print("deleteUser result: \(result)")
+                self.showDialog(title: "Result", message: "deleteUser result: \(result)")
+                self.palmId = ""
+            }
         }
     }
     
     
     @IBAction func onDestory(_ sender: Any) {
         PalmIDNativeSDK.sharedInstance().releaseEngine()
+        print("sdk released")
+        self.showDialog(title: "Result", message: "sdk released")
     }
     
     // MARK: - Helper Methods
