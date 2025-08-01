@@ -10,11 +10,11 @@ import PalmIDNativeSDK
 
 class ViewController: UIViewController {
     private var palmServerEntrypoint: String = "https://api2.palmid.com/saas"
-    private var appServerEntrypoint: String = "https://api2.palmid.com/saas"
+    private var appServerEntrypoint: String = "https://app.palmid.com/"
     private var projectId: String = "" // Replace with your projectId
     private var requiredEnrollmentScans: Int = 1  // Optional. Required number of scans for enrollment
 
-    var palmId: String = ""
+    var userId: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             } else {
                 print("enroll result: \(result)")
                 self.showDialog(title: "Result", message: "enroll result: \(result)")
-                self.palmId = result.data.palmId
+                self.userId = result.data.userId
             }
         }
     }
@@ -42,17 +42,17 @@ class ViewController: UIViewController {
         PalmIDNativeSDK.sharedInstance().identify(with: self.navigationController!, loadController: load) { result in
             print("identify result: \(result)")
             self.showDialog(title: "Result", message: "identify result: \(result)")
-            self.palmId = result.data.palmId
+            self.userId = result.data.userId
         }
     }
     
     
     @IBAction func onVerify(_ sender: Any) {
-        if palmId.isEmpty {
-            self.showDialog(title: "Error", message: "Verification requires an input palmId")
+        if userId.isEmpty {
+            self.showDialog(title: "Error", message: "Verification requires an input userId")
         } else {
             var load = PalmIDNativeSDKLoadController()
-            PalmIDNativeSDK.sharedInstance().verify(withPalmId: self.palmId, navigationController: self.navigationController!, loadController: load) { result in
+            PalmIDNativeSDK.sharedInstance().verify(withUserId: self.userId, navigationController: self.navigationController!, loadController: load) { result in
                 print("verify result: \(result)")
                 self.showDialog(title: "Result", message: "verify result: \(result)")
             }
@@ -60,10 +60,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onDelete(_ sender: Any) {
-        if palmId.isEmpty {
-            self.showDialog(title: "Error", message: "DeleteUser requires an input palmId")
+        if userId.isEmpty {
+            self.showDialog(title: "Error", message: "DeleteUser requires an input userId")
         } else {
-            PalmIDNativeSDK.sharedInstance().deleteUser(self.palmId) { result in
+            PalmIDNativeSDK.sharedInstance().deleteUser(self.userId) { result in
                 print("deleteUser result: \(result)")
                 self.showDialog(title: "Result", message: "deleteUser result: \(result)")
                 self.palmId = ""

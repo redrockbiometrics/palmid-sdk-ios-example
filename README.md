@@ -42,12 +42,12 @@ pod 'PalmIDNativeSDK', 'latest.version'
 /**
  * Verifies a user's palm print against a registered palm ID.
  *
- * @param palmId              Pre-registered palm identifier to verify against.
+ * @param userId              Pre-registered palm identifier to verify against.
  * @param navigationController Host navigation controller for presenting verification UI.
  * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
  * @param block               Callback block with verification result (success/failure and metadata).
  */
-- (void)verifyWithPalmId:(NSString *)palmId
+- (void)verifyWithUserId:(NSString *)userId
     navigationController:(UINavigationController *)navigationController
           loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
                   result:(PalmIDNativeSDKResultBlock)block;
@@ -77,10 +77,10 @@ pod 'PalmIDNativeSDK', 'latest.version'
 /**
  * Removes a registered user from the palm recognition system.
  *
- * @param palmId Unique identifier of the user to be removed.
+ * @param userId Unique identifier of the user to be removed.
  * @param block  Callback block with deletion result (success/failure status).
  */
-- (void)deleteUser:(NSString *)palmId result:(PalmIDNativeSDKResultBlock)block;
+- (void)deleteUser:(NSString *)userId result:(PalmIDNativeSDKResultBlock)block;
 
 /**
  * Release engine
@@ -95,13 +95,14 @@ pod 'PalmIDNativeSDK', 'latest.version'
 
 ```c
 @interface PalmIDNativeResultData : NSObject
-@property (nonatomic, copy) NSString *palmId;
+@property (nonatomic, copy) NSString *userId;
 @property (nonatomic, assign) double score;
 @property (nonatomic, copy) NSString *sessionId; // Only has value when appServerEntrypoint is specified during initialization
 @end
 
 @interface PalmIDNativeResult : NSObject
 @property (nonatomic, assign) int errorCode;
+@property (nonatomic, copy) NSString *errorMsg;
 @property (nonatomic, strong) PalmIDNativeResultData *data;
 @end
 ```
