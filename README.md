@@ -18,7 +18,7 @@ This is a simple example of how to use the PalmID SDK.
 source 'https://github.com/CocoaPods/Specs.git'
 source 'git@github.com:redrockbiometrics/palmid-sdk-cocopods.git'
 
-pod 'PalmIDNativeSDK', 'latest.version'
+pod 'PalmIDNativeSDK', '1.3.6'
 ```
 
 ## API Reference
