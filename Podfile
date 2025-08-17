@@ -10,7 +10,7 @@ target 'PalmIDSDKExample' do
   use_frameworks!
 
   # Pods for PalmIDSDKExample
-  pod 'PalmIDNativeSDK', 'latest.version'
+  pod 'PalmIDNativeSDK', '1.3.7'
 
   target 'PalmIDSDKExampleTests' do
     inherit! :search_paths
