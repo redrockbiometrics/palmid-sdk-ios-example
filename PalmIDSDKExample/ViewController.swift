@@ -57,8 +57,8 @@ class ViewController: UIViewController {
         } else {
             PalmIDNativeSDK.sharedInstance().deleteUser(self.userId) { result in
                 print("deleteUser result: \(result.toJsonString())")
-                self.showDialog(title: "Result", message: "deleteUser result: \(result.toJsonString())")
                 self.updateUserId(userId: nil)
+                self.showDialog(title: "Result", message: "deleteUser result: \(result.toJsonString())")
             }
         }
     }
