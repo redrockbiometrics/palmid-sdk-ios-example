@@ -30,11 +30,15 @@ class ViewController: UIViewController {
         PalmIDNativeSDK.sharedInstance().enroll(with: self.navigationController!, loadController: load) { result in
             self.updateUserId(userId: result.data.userId)
             
-            if result.errorCode == 100004 {
-                self.showDialog(title: "Error", message: "Duplicate enrollment, palms are already registered")
+            if result.errorCode == 100000 {
+                print("enroll succeed. userId = \(result.data.userId)")
+                self.showDialog(title: "Result", message: "enroll succeed. userId = \(result.data.userId)")
+            } else if result.errorCode == 100004 {
+                print("duplicate enrollment, palms are already registered. userId = \(result.data.userId)")
+                self.showDialog(title: "Result", message: "duplicate enrollment, palms are already registered. userId = \(result.data.userId)")
             } else {
-                print("enroll result: \(result.toJsonString())")
-                self.showDialog(title: "Result", message: "enroll result: \(result.toJsonString())")
+                print("enroll fail. errorCode = \(result.errorCode)")
+                self.showDialog(title: "Result", message: "enroll fail. errorCode = \(result.errorCode)")
             }
         }
     }
@@ -45,8 +49,13 @@ class ViewController: UIViewController {
         } else {
             let load = PalmIDNativeSDKLoadController()
             PalmIDNativeSDK.sharedInstance().verify(withUserId: self.userId, navigationController: self.navigationController!, loadController: load) { result in
-                print("verify result: \(result.toJsonString())")
-                self.showDialog(title: "Result", message: "verify result: \(result.toJsonString())")
+                if result.errorCode == 100000 { //success
+                    print("verify succeed. score = \(result.data.score)")
+                    self.showDialog(title: "Result", message: "verify succeed. score = \(result.data.score)")
+                } else { //fail
+                    print("verify fail. errorCode = \(result.errorCode)")
+                    self.showDialog(title: "Result", message: "verify fail. errorCode = \(result.errorCode)")
+                }
             }
         }
     }
@@ -56,9 +65,14 @@ class ViewController: UIViewController {
             self.showDialog(title: "Error", message: "DeleteUser requires an input userId")
         } else {
             PalmIDNativeSDK.sharedInstance().deleteUser(self.userId) { result in
-                print("deleteUser result: \(result.toJsonString())")
-                self.updateUserId(userId: nil)
-                self.showDialog(title: "Result", message: "deleteUser result: \(result.toJsonString())")
+                if result.errorCode == 100000 { //success
+                    self.updateUserId(userId: nil)
+                    print("deleteUser succeed.")
+                    self.showDialog(title: "Result", message: "deleteUser succeed.")
+                } else { //fail
+                    print("deleteUser fail. errorCode = \(result.errorCode)")
+                    self.showDialog(title: "Result", message: "deleteUser fail. errorCode = \(result.errorCode)")
+                }
             }
         }
     }
