@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     private var palmServerEntrypoint: String = "https://api2.palmid.com/saas"
     private var appServerEntrypoint: String = "https://app.palmid.com/"
     private var projectId: String = "" // Replace with your projectId
-    private var requiredEnrollmentScans: Int = 1  // Optional. Required number of scans for enrollment
+    private var requiredEnrollmentScans: Int = 2  // Optional. Required number of scans for enrollment
 
     var userId: String = ""
 
