@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     private var projectId: String = "" // Replace with your projectId
     private var requiredEnrollmentScans: Int = 2  // Optional. Required number of scans for enrollment
 
+    private var userId: String = ""
     @IBOutlet var userIdLabel: UILabel!
 
     override func viewDidLoad() {
@@ -25,9 +26,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onEnroll(_ sender: Any) {
-        var load = PalmIDNativeSDKLoadController()
+        let load = PalmIDNativeSDKLoadController()
         PalmIDNativeSDK.sharedInstance().enroll(with: self.navigationController!, loadController: load) { result in
-            self.userIdLabel.text = "userId: \(result.data.userId ?? "")"
+            self.updateUserId(userId: result.data.userId)
             
             if result.errorCode == 100004 {
                 self.showDialog(title: "Error", message: "Duplicate enrollment, palms are already registered")
@@ -39,11 +40,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onVerify(_ sender: Any) {
-        if self.userIdLabel.text?.isEmpty ?? true {
+        if self.userId.isEmpty {
             self.showDialog(title: "Error", message: "Verification requires an input userId")
         } else {
-            var load = PalmIDNativeSDKLoadController()
-            PalmIDNativeSDK.sharedInstance().verify(withUserId: self.userIdLabel.text!, navigationController: self.navigationController!, loadController: load) { result in
+            let load = PalmIDNativeSDKLoadController()
+            PalmIDNativeSDK.sharedInstance().verify(withUserId: self.userId, navigationController: self.navigationController!, loadController: load) { result in
                 print("verify result: \(result.toJsonString())")
                 self.showDialog(title: "Result", message: "verify result: \(result.toJsonString())")
             }
@@ -51,13 +52,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onDelete(_ sender: Any) {
-        if self.userIdLabel.text?.isEmpty ?? true {
+        if self.userId.isEmpty {
             self.showDialog(title: "Error", message: "DeleteUser requires an input userId")
         } else {
-            PalmIDNativeSDK.sharedInstance().deleteUser(self.userIdLabel.text!) { result in
+            PalmIDNativeSDK.sharedInstance().deleteUser(self.userId) { result in
                 print("deleteUser result: \(result.toJsonString())")
+                self.updateUserId(userId: nil)
                 self.showDialog(title: "Result", message: "deleteUser result: \(result.toJsonString())")
-                self.userIdLabel.text = "userId: None"
             }
         }
     }
@@ -65,8 +66,14 @@ class ViewController: UIViewController {
     
     @IBAction func onDestory(_ sender: Any) {
         PalmIDNativeSDK.sharedInstance().releaseEngine()
+        self.updateUserId(userId: nil)
         print("sdk released")
         self.showDialog(title: "Result", message: "sdk released")
+    }
+
+    private func updateUserId(userId: String?) {
+        self.userId = userId ?? ""
+        self.userIdLabel.text = "userId: \(userId ?? "None")"
     }
     
     // MARK: - Helper Methods
