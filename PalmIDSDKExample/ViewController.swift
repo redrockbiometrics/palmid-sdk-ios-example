@@ -66,7 +66,7 @@ class ViewController: UIViewController {
             PalmIDNativeSDK.sharedInstance().deleteUser(self.userId) { result in
                 print("deleteUser result: \(result)")
                 self.showDialog(title: "Result", message: "deleteUser result: \(result)")
-                self.palmId = ""
+                self.userId = ""
             }
         }
     }
