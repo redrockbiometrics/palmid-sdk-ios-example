@@ -30,22 +30,12 @@ class ViewController: UIViewController {
             if result.errorCode == 100004 {
                 self.showDialog(title: "Error", message: "Duplicate enrollment, palms are already registered")
             } else {
-                print("enroll result: \(result)")
-                self.showDialog(title: "Result", message: "enroll result: \(result)")
+                print("enroll result: \(result.toJsonString())")
+                self.showDialog(title: "Result", message: "enroll result: \(result.toJsonString())")
                 self.userId = result.data.userId
             }
         }
     }
-    
-    @IBAction func onIdentify(_ sender: Any) {
-        var load = PalmIDNativeSDKLoadController()
-        PalmIDNativeSDK.sharedInstance().identify(with: self.navigationController!, loadController: load) { result in
-            print("identify result: \(result)")
-            self.showDialog(title: "Result", message: "identify result: \(result)")
-            self.userId = result.data.userId
-        }
-    }
-    
     
     @IBAction func onVerify(_ sender: Any) {
         if userId.isEmpty {
@@ -53,8 +43,8 @@ class ViewController: UIViewController {
         } else {
             var load = PalmIDNativeSDKLoadController()
             PalmIDNativeSDK.sharedInstance().verify(withUserId: self.userId, navigationController: self.navigationController!, loadController: load) { result in
-                print("verify result: \(result)")
-                self.showDialog(title: "Result", message: "verify result: \(result)")
+                print("verify result: \(result.toJsonString())")
+                self.showDialog(title: "Result", message: "verify result: \(result.toJsonString())")
             }
         }
     }
@@ -64,8 +54,8 @@ class ViewController: UIViewController {
             self.showDialog(title: "Error", message: "DeleteUser requires an input userId")
         } else {
             PalmIDNativeSDK.sharedInstance().deleteUser(self.userId) { result in
-                print("deleteUser result: \(result)")
-                self.showDialog(title: "Result", message: "deleteUser result: \(result)")
+                print("deleteUser result: \(result.toJsonString())")
+                self.showDialog(title: "Result", message: "deleteUser result: \(result.toJsonString())")
                 self.userId = ""
             }
         }
