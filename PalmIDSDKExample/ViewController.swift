@@ -27,12 +27,13 @@ class ViewController: UIViewController {
     @IBAction func onEnroll(_ sender: Any) {
         var load = PalmIDNativeSDKLoadController()
         PalmIDNativeSDK.sharedInstance().enroll(with: self.navigationController!, loadController: load) { result in
+            self.userId = result.data.userId ?? ""
+            
             if result.errorCode == 100004 {
                 self.showDialog(title: "Error", message: "Duplicate enrollment, palms are already registered")
             } else {
                 print("enroll result: \(result.toJsonString())")
                 self.showDialog(title: "Result", message: "enroll result: \(result.toJsonString())")
-                self.userId = result.data.userId
             }
         }
     }
