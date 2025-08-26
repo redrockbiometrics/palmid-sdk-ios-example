@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         PalmIDNativeSDK.sharedInstance().enroll(with: self.navigationController!, loadController: load) { result in
             if result.errorCode == 100004 {
                 self.showDialog(title: "Error", message: "Duplicate enrollment, palms are already registered")
+                self.userId = result.data.userId
             } else {
                 print("enroll result: \(result)")
                 self.showDialog(title: "Result", message: "enroll result: \(result)")
@@ -36,16 +37,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func onIdentify(_ sender: Any) {
-        var load = PalmIDNativeSDKLoadController()
-        PalmIDNativeSDK.sharedInstance().identify(with: self.navigationController!, loadController: load) { result in
-            print("identify result: \(result)")
-            self.showDialog(title: "Result", message: "identify result: \(result)")
-            self.userId = result.data.userId
-        }
-    }
-    
     
     @IBAction func onVerify(_ sender: Any) {
         if userId.isEmpty {
