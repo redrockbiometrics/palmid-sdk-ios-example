@@ -27,6 +27,15 @@ pod 'PalmIDNativeSDK', 'latest.version'
 /**
  * Initializes the PalmID SDK engine with required credentials and configuration.
  *
+ * @param requiredEnrollmentScans (Optional) Required number of scans for enrollment. Pass `nil` if not required.
+ * @param completion       Callback block with initialization result (success/failure).
+ */
+- (void)initializeWithRequiredEnrollmentScans:(NSNumber * _Nullable)requiredEnrollmentScans
+                      completion:(PalmIDNativeSDKCompletion)completion;
+
+/**
+ * Initializes the PalmID SDK engine with required credentials and configuration.
+ *
  * @param palmServerEntrypoint       (Optional) Custom backend API endpoint URL. Pass `nil` to use the default endpoint.
  * @param appServerEntrypoint       (Optional) Custom backend API endpoint URL. Pass `nil` to use the default endpoint.
  * @param projectId        (Required) Project identifier for service segregation. Must not be `nil`.
@@ -40,47 +49,58 @@ pod 'PalmIDNativeSDK', 'latest.version'
                       completion:(PalmIDNativeSDKCompletion)completion;
 
 /**
- * Verifies a user's palm print against a registered palm ID.
+ * Verifies a user's palm print.
+ *
+ * @param viewController Host viewcontroller for presenting verification UI.
+ * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
+ * @param block               Callback block with verification result (success/failure and metadata).
+ */
+- (void)verifyWithViewController:(UIViewController *)viewController
+          loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
+                  result:(PalmIDNativeSDKResultBlock)block;
+
+/**
+ * Verifies a user's palm print against a registered user ID.
  *
  * @param userId              Pre-registered palm identifier to verify against.
- * @param navigationController Host navigation controller for presenting verification UI.
+ * @param viewController Host viewcontroller for presenting verification UI.
  * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
  * @param block               Callback block with verification result (success/failure and metadata).
  */
 - (void)verifyWithUserId:(NSString *)userId
-    navigationController:(UINavigationController *)navigationController
+          viewController:(UIViewController *)viewController
           loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
                   result:(PalmIDNativeSDKResultBlock)block;
 
 /**
  * Identifies a user by capturing and matching their palm print.
  *
- * @param navigationController Host navigation controller for presenting capture UI.
+ * @param viewController Host viewcontroller for presenting capture UI.
  * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
  * @param block               Callback block with identification result (matched palm ID or error).
  */
-- (void)identifyWithNavigationController:(UINavigationController *)navigationController
+- (void)identifyWithViewController:(UIViewController *)viewController
                           loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
                                   result:(PalmIDNativeSDKResultBlock)block;
 
 /**
  * Enrolls a new user by capturing and registering their palm print.
  *
- * @param navigationController Host navigation controller for presenting enrollment UI.
+ * @param viewController Host viewcontroller for presenting enrollment UI.
  * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
  * @param block               Callback block with enrollment result (success/failure status).
  */
-- (void)enrollWithNavigationController:(UINavigationController *)navigationController
+- (void)enrollWithViewController:(UIViewController *)viewController
                         loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
                                 result:(PalmIDNativeSDKResultBlock)block;
 
 /**
  * Removes a registered user from the palm recognition system.
  *
- * @param userId Unique identifier of the user to be removed.
+ * @param palmId Unique identifier of the user to be removed.
  * @param block  Callback block with deletion result (success/failure status).
  */
-- (void)deleteUser:(NSString *)userId result:(PalmIDNativeSDKResultBlock)block;
+- (void)deleteUser:(NSString *)palmId result:(PalmIDNativeSDKResultBlock)block;
 
 /**
  * Release engine
