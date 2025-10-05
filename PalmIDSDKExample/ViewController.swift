@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     @IBAction func onEnroll(_ sender: Any) {
         let load = PalmIDNativeSDKLoadController()
-        PalmIDNativeSDK.sharedInstance().enroll(with: self.navigationController!, loadController: load) { result in
+        PalmIDNativeSDK.sharedInstance().enroll(with: self, loadController: load) { result in
             self.updateUserId(userId: result.data.userId)
             
             if result.errorCode == 100000 {
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             self.showDialog(title: "Error", message: "Verification requires an input userId")
         } else {
             let load = PalmIDNativeSDKLoadController()
-            PalmIDNativeSDK.sharedInstance().verify(withUserId: self.userId, navigationController: self.navigationController!, loadController: load) { result in
+            PalmIDNativeSDK.sharedInstance().verify(withUserId: self.userId, viewController: self, loadController: load) { result in
                 if result.errorCode == 100000 { //success
                     print("verify succeed. score = \(result.data.score)")
                     self.showDialog(title: "Result", message: "verify succeed. score = \(result.data.score)")
