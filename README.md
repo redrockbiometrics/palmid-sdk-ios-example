@@ -53,10 +53,12 @@ pod 'PalmIDNativeSDK', 'latest.version'
  *
  * @param viewController Host viewcontroller for presenting verification UI.
  * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
+ * @param appServerMessage    (Optional) Custom message to be sent to app server. Pass `nil` if not required.
  * @param block               Callback block with verification result (success/failure and metadata).
  */
 - (void)verifyWithViewController:(UIViewController *)viewController
           loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
+          appServerMessage:(NSString * _Nullable)appServerMessage
                   result:(PalmIDNativeSDKResultBlock)block;
 
 /**
@@ -65,11 +67,13 @@ pod 'PalmIDNativeSDK', 'latest.version'
  * @param userId              Pre-registered palm identifier to verify against.
  * @param viewController Host viewcontroller for presenting verification UI.
  * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
+ * @param appServerMessage    (Optional) Custom message to be sent to app server. Pass `nil` if not required.
  * @param block               Callback block with verification result (success/failure and metadata).
  */
 - (void)verifyWithUserId:(NSString *)userId
           viewController:(UIViewController *)viewController
           loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
+          appServerMessage:(NSString * _Nullable)appServerMessage
                   result:(PalmIDNativeSDKResultBlock)block;
 
 /**
@@ -77,10 +81,12 @@ pod 'PalmIDNativeSDK', 'latest.version'
  *
  * @param viewController Host viewcontroller for presenting capture UI.
  * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
+ * @param appServerMessage    (Optional) Custom message to be sent to app server. Pass `nil` if not required.
  * @param block               Callback block with identification result (matched palm ID or error).
  */
 - (void)identifyWithViewController:(UIViewController *)viewController
                           loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
+                          appServerMessage:(NSString * _Nullable)appServerMessage
                                   result:(PalmIDNativeSDKResultBlock)block;
 
 /**
@@ -88,10 +94,12 @@ pod 'PalmIDNativeSDK', 'latest.version'
  *
  * @param viewController Host viewcontroller for presenting enrollment UI.
  * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
+ * @param appServerMessage    (Optional) Custom message to be sent to app server. Pass `nil` if not required.
  * @param block               Callback block with enrollment result (success/failure status).
  */
 - (void)enrollWithViewController:(UIViewController *)viewController
                         loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
+                        appServerMessage:(NSString * _Nullable)appServerMessage
                                 result:(PalmIDNativeSDKResultBlock)block;
 
 /**
