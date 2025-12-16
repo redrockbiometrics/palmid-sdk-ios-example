@@ -49,6 +49,7 @@ class ViewController: UIViewController {
         PalmIDNativeSDK.sharedInstance().identify(with: self, loadController: load, appServerMessage: appServerMessage) { result in
             if result.errorCode == 100000 { //success
                 print("identify succeed. userId = \(result.data.userId)")
+                self.updateUserId(userId: result.data.userId)
                 self.showDialog(title: "Result", message: "verify succeed. score = \(result.data.score)")
             } else { //fail
                 print("identify fail. errorCode = \(result.errorCode)")
