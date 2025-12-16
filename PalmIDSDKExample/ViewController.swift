@@ -10,9 +10,10 @@ import PalmIDNativeSDK
 
 class ViewController: UIViewController {
     private var palmServerEntrypoint: String = "https://api2.palmid.com/saas"
-    private var appServerEntrypoint: String = "https://app.palmid.com/"
+    private var appServerEntrypoint: String = ""
     private var projectId: String = "" // Replace with your projectId
     private var requiredEnrollmentScans: Int = 2  // Optional. Required number of scans for enrollment
+    private var appServerMessage: String = ""
 
     var userId: String = ""
     @IBOutlet var userIdLabel: UILabel!
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
     
     @IBAction func onEnroll(_ sender: Any) {
         let load = PalmIDNativeSDKLoadController()
-        PalmIDNativeSDK.sharedInstance().enroll(with: self, loadController: load) { result in
+        PalmIDNativeSDK.sharedInstance().enroll(with: self, loadController: load, appServerMessage: appServerMessage) { result in
             self.updateUserId(userId: result.data.userId)
             
             if result.errorCode == 100000 {
@@ -43,12 +44,25 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func onIdentify(_ sender: Any) {
+        let load = PalmIDNativeSDKLoadController()
+        PalmIDNativeSDK.sharedInstance().identify(with: self, loadController: load, appServerMessage: appServerMessage) { result in
+            if result.errorCode == 100000 { //success
+                print("identify succeed. userId = \(result.data.userId)")
+                self.showDialog(title: "Result", message: "verify succeed. score = \(result.data.score)")
+            } else { //fail
+                print("identify fail. errorCode = \(result.errorCode)")
+                self.showDialog(title: "Result", message: "identify fail. errorCode = \(result.errorCode)")
+            }
+        }
+    }
+    
     @IBAction func onVerify(_ sender: Any) {
         if self.userId.isEmpty {
             self.showDialog(title: "Error", message: "Verification requires an input userId")
         } else {
             let load = PalmIDNativeSDKLoadController()
-            PalmIDNativeSDK.sharedInstance().verify(withUserId: self.userId, viewController: self, loadController: load) { result in
+            PalmIDNativeSDK.sharedInstance().verify(withUserId: self.userId, viewController: self, loadController: load, appServerMessage: appServerMessage) { result in
                 if result.errorCode == 100000 { //success
                     print("verify succeed. score = \(result.data.score)")
                     self.showDialog(title: "Result", message: "verify succeed. score = \(result.data.score)")
