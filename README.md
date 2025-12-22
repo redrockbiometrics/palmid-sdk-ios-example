@@ -83,11 +83,12 @@ pod 'PalmIDNativeSDK', 'latest.version'
  * @param loadController      (Optional) Custom loading UI controller. Pass `nil` for default UI.
  * @param appServerMessage    (Optional) Custom message to be sent to app server. Pass `nil` if not required.
  * @param block               Callback block with identification result (matched palm ID or error).
+ * @deprecated This method is deprecated. Please use an alternative method.
  */
 - (void)identifyWithViewController:(UIViewController *)viewController
                           loadController:(PalmIDNativeSDKLoadController * _Nullable)loadController
                           appServerMessage:(NSString * _Nullable)appServerMessage
-                                  result:(PalmIDNativeSDKResultBlock)block;
+                                  result:(PalmIDNativeSDKResultBlock)block DEPRECATED_MSG_ATTRIBUTE("This method is deprecated");
 
 /**
  * Enrolls a new user by capturing and registering their palm print.
