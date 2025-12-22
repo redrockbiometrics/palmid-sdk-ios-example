@@ -14,19 +14,26 @@ class ViewController: UIViewController {
     private var projectId: String = "" // Replace with your projectId
     private var requiredEnrollmentScans: Int = 2  // Optional. Required number of scans for enrollment
     private var appServerMessage: String = ""
+    private var isInitialized: Bool = false  // Initialization status flag
 
     var userId: String = ""
     @IBOutlet var userIdLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    @IBAction func onInitialize(_ sender: Any) {
         PalmIDNativeSDK.sharedInstance().initialize(withPalmServerEntrypoint: palmServerEntrypoint, appServerEntrypoint: appServerEntrypoint, projectId: projectId, requiredEnrollmentScans: NSNumber(value: requiredEnrollmentScans)) { success in
             print("init sdk result: \(success)")
+            self.isInitialized = success
             self.showToast(message: "Initialize result: \(success)")
         }
     }
     
     @IBAction func onEnroll(_ sender: Any) {
+        guard checkInitialization() else { return }
+        
         let load = PalmIDNativeSDKLoadController()
         PalmIDNativeSDK.sharedInstance().enroll(with: self, loadController: load, appServerMessage: appServerMessage) { result in
             self.updateUserId(userId: result.data.userId)
@@ -60,6 +67,8 @@ class ViewController: UIViewController {
 //    }
     
     @IBAction func onVerify(_ sender: Any) {
+        guard checkInitialization() else { return }
+        
         if self.userId.isEmpty {
             self.showDialog(title: "Error", message: "Verification requires an input userId")
         } else {
@@ -77,6 +86,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onDelete(_ sender: Any) {
+        guard checkInitialization() else { return }
+        
         if self.userId.isEmpty {
             self.showDialog(title: "Error", message: "DeleteUser requires an input userId")
         } else {
@@ -95,7 +106,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func onDestory(_ sender: Any) {
+        guard checkInitialization() else { return }
+        
         PalmIDNativeSDK.sharedInstance().releaseEngine()
+        self.isInitialized = false
         self.updateUserId(userId: nil)
         print("sdk released")
         self.showDialog(title: "Result", message: "sdk released")
@@ -107,6 +121,15 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Helper Methods
+    
+    /// Check if SDK is initialized, show alert and return false if not initialized
+    private func checkInitialization() -> Bool {
+        if !isInitialized {
+            showDialog(title: "Error", message: "SDK is not initialized. Please initialize first.")
+            return false
+        }
+        return true
+    }
     
     private func showToast(message: String) {
         DispatchQueue.main.async {
